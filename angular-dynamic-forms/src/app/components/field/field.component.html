@@ -1,0 +1,20 @@
+<div [formGroup]="form">
+    <label [attr.for]="field.id">{{field.label}}</label>
+
+    <div [ngSwitch]="field.controlType">
+        <section>
+            <input *ngSwitchCase="'textbox'" [formControlName]="field.id" [id]="field.id" type="text">
+        </section>
+        <section *ngSwitchCase="'dropdown'">
+            <select [id]="field.id" [formControlName]="field.id">
+                <option *ngFor="let opt of field.options" [value]="opt.code">{{opt.value}}</option>
+            </select>
+        </section>
+
+        <section *ngSwitchCase="'radioGroup'">
+            <input *ngFor="let opt of field.options" type="radio" [value]='opt.code' [formControlName]="field.id">{{opt.value}}
+        </section> 
+    </div>
+
+    <div class="errorMessage" *ngIf="!isValid">{{field.errorMessage}} is required</div>
+</div>
