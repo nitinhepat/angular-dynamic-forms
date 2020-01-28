@@ -1,6 +1,52 @@
 [
     {
-        "id": "nameField"
+        "id": "nameField",
+        "value": "",
+        "controlType": "textbox",
+        "placeHolder": "Enter Name",
+        "label": "Name",
+        "required": true,
+        "errorMessage": "Please enter name"
+        
+    },
+    {
+        "id": "genderField",
+        "value": "",
+        "controlType": "radioGroup",
+        "placeHolder": "Please select gender",
+        "label": "Gender",
+        "required": true,
+        "options": [
+            {
+                "code": "Male",
+                "value": "male"
+            },
+            {
+                "code": "Female",
+                "value": "female"
+            }
+        ],
+        "errorMessage": "Please select gender"
+        
+    },
+    {
+        "id": "genderField",
+        "value": "",
+        "controlType": "dropdown",
+        "placeHolder": "Please select profession",
+        "label": "Profession",
+        "required": true,
+        "options": [
+            {
+                "code": "Prof1",
+                "value": "prof1"
+            },
+            {
+                "code": "Prof2",
+                "value": "prof2"
+            }
+        ],
+        "errorMessage": "Please select gender"
         
     }
 ]

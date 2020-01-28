@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<div [formGroup]="form" class="field-section">
     <label [attr.for]="field.id">{{field.label}}</label>
 
     <div [ngSwitch]="field.controlType">
@@ -12,7 +12,9 @@
         </section>
 
         <section *ngSwitchCase="'radioGroup'">
-            <input *ngFor="let opt of field.options" type="radio" [value]='opt.code' [formControlName]="field.id">{{opt.value}}
+            <span *ngFor="let opt of field.options">
+            <input  type="radio" [value]='opt.code' [formControlName]="field.id">{{opt.value}}
+            </span>
         </section> 
     </div>
 

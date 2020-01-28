@@ -10,7 +10,9 @@ import { FormGroup } from '@angular/forms';
 export class FieldComponent implements OnInit {
   @Input() field: FieldModel;
   @Input() form: FormGroup;
-  get isValid() { return this.form.controls[this.field.id].valid; }
+  get isValid() { 
+    return !this.form.controls[this.field.id].touched || this.form.controls[this.field.id].valid; 
+  }
   constructor() { }
 
   ngOnInit() {
